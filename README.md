@@ -39,7 +39,7 @@ What pitfalls, hints, or techniques should you be aware of when implementing the
 
 ## Sample Code  
 
-Code fragments that illustrate how you might implement the pattern in C++ or Smalltalk. 
+Code fragments that illustrate how you might implement the pattern in Java. 
 
 ## Known Uses  
 
