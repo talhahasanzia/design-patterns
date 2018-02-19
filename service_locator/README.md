@@ -1,50 +1,33 @@
-# design-patterns
-Sample repo for design pattern study from GoF Book.Pattern Name and Classification  
-
-The pattern's name conveys the essence of the pattern succinctly. A good name is vital, because it will become part of your design vocabulary.  
+# Service Locator
 
 ## Intent  
 
-A short statement that answers the following questions: What does the design pattern do? What is its rationale and intent? What particular design issue or problem does it address? 
-Also Known As  
-Other well-known names for the pattern, if any. 
+Service Locator is used to locate and provide various services when needed. In applications where there are a number of services it maybe difficult to manage them.
 
 ## Motivation  
 
-A scenario that illustrates a design problem and how the class and object structures in the pattern solve the problem. The scenario will help you understand the more abstract description of the pattern that follows. 
+If there is a social app that uses so many features like Authentication, Downloads, Sharing and others etc, writing conventional code may lead to sophisticated access and creation of services. ServiceLocator acts as a provider and manager for these services which can help reduce complex flows and unwanted application behaviours.
 
 ## Applicability  
 
-What are the situations in which the design pattern can be applied? What are examples of poor designs that the pattern can address? How can you recognize these situations? 
+Application may (or may not) be using services without any standard way of managing them. Which may lead to issues like memory, exceptions, concurrency and others, since it takes care of creation and dispatching of services. This design pattern allows us to address the issues related to services in an app.
 
 ## Structure  
-
-A graphical representation of the classes in the pattern using a notation based on the Object Modeling Technique (OMT) [RBP+91]. We also use interaction diagrams [JCJO92, Boo94] to illustrate sequences of requests and collaborations between objects. Appendix B describes these notations in detail. 
+Image from [Tutorials Point](https://www.tutorialspoint.com/design_pattern/service_locator_pattern.htm) illustrating structure of this design pattern.
+![alt text](https://www.tutorialspoint.com/design_pattern/images/servicelocator_pattern_uml_diagram.jpg)
 
 ## Participants  
+  - **ServiceLocator** - Main class for getting services.
+  - **Cache** - A class that holds instances of Services.
+  - **InitContext** - A class responsible for lookup and returning services and creating them if not created yet.
+  - **Service** - The service object responsible for completing any task.
 
-The classes and/or objects participating in the design pattern and their responsibilities. 
-
-## Collaborations  
-
-How the participants collaborate to carry out their responsibilities. 
 
 ## Consequences  
 
-How does the pattern support its objectives? What are the trade-offs and results of using the pattern? What aspect of system structure does it let you vary independently? 
+- Violates ISP. (Interface Segragation)
+- Hidden Dependencies may cause application crashes.
 
-## Implementation  
-
-What pitfalls, hints, or techniques should you be aware of when implementing the pattern? Are there language-specific issues? 
-
-## Sample Code  
-
-Code fragments that illustrate how you might implement the pattern in Java. 
-
-## Known Uses  
-
-Examples of the pattern found in real systems. We include at least two examples from different domains.
-
-## Related Patterns  
-
-What design patterns are closely related to this one? What are the important differences? With which other patterns should this one be used? 
+## Credits
+- [Tutorials Point](https://www.tutorialspoint.com/design_pattern/service_locator_pattern.htm)
+- [iluwatar/java-design-patterns](https://github.com/iluwatar/java-design-patterns)
