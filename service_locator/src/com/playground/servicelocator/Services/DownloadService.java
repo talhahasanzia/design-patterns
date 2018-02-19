@@ -1,0 +1,37 @@
+package com.playground.servicelocator.Services;
+
+import com.playground.servicelocator.Listeners.DownloadServiceListener;
+import com.playground.servicelocator.Listeners.OnServiceCompleteListener;
+import com.playground.servicelocator.Models.DownloadObject;
+
+public class DownloadService implements Service {
+
+    private DownloadServiceListener downloadServiceListener;
+
+
+    public DownloadService() {
+
+    }
+
+    @Override
+    public String getName() {
+        return DownloadService.class.getSimpleName();
+    }
+
+    @Override
+    public void execute() {
+        System.out.println("Downloading..");
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        DownloadObject downloadObject=new DownloadObject("/assets/denver.mp3","John Denver - Country Roads","Country Roads, Take Me Home");
+        downloadServiceListener.onServiceCompleted(downloadObject);
+    }
+
+    @Override
+    public void setListener(OnServiceCompleteListener listener) {
+        this.downloadServiceListener= (DownloadServiceListener) listener;
+    }
+}
