@@ -1,24 +1,26 @@
 package com.playground.servicelocator.ServiceLocator;
 
 import com.playground.servicelocator.Listeners.OnServiceCompleteListener;
+import com.playground.servicelocator.Main.ApplicationContext;
 import com.playground.servicelocator.Services.Service;
 
 public class ServiceLocator {
 
     private static ServiceLocator instance;
 
-
+    private ApplicationContext applicationContext;
     private Cache cache;
     private LookUp lookUp;
 
-    public static ServiceLocator getInstance() {
+    public static ServiceLocator getInstance(ApplicationContext applicationContext) {
         if (instance == null)
-            instance = new ServiceLocator();
+            instance = new ServiceLocator(applicationContext);
 
         return instance;
     }
 
-    private ServiceLocator() {
+    private ServiceLocator(ApplicationContext applicationContext) {
+        this.applicationContext = applicationContext;
         cache = Cache.getInstance();
         lookUp = LookUp.getInstance();
     }

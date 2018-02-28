@@ -5,11 +5,13 @@ import com.playground.servicelocator.ServiceLocator.ServiceLocator;
 public class Main {
 
     public static void main(String[] args) {
-	// write your code here
+        // write your code here
 
-        ServiceLocator serviceLocator=ServiceLocator.getInstance();
+        ApplicationContext applicationContext = new ApplicationContext(); // to pass framework dependies to serviceLocator
 
-        ServiceLocatorDemo serviceLocatorDemo=new ServiceLocatorDemo(serviceLocator);
+        ServiceLocator serviceLocator = ServiceLocator.getInstance(applicationContext);
+
+        ServiceLocatorDemo serviceLocatorDemo = new ServiceLocatorDemo(serviceLocator);
 
 
         serviceLocatorDemo.executeAuthentication();
