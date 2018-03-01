@@ -30,7 +30,7 @@ public class ServiceLocatorDemo {
     {
         try {
             DownloadService downloadService= (DownloadService) serviceLocator.getService(DownloadService.class.getSimpleName());
-            setDownloadListener(downloadService); // Not required in service locator
+            setDownloadListener(downloadService); // Not required in service locator pattern just for example flow
             downloadService.execute();
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
@@ -38,6 +38,7 @@ public class ServiceLocatorDemo {
 
     }
 
+    // not required in ServiceLocator just for demo
     private void setDownloadListener(DownloadService downloadService) {
         downloadService.setListener(new DownloadServiceListener() {
             @Override
@@ -52,6 +53,7 @@ public class ServiceLocatorDemo {
         });
     }
 
+    // Just for example purposes, not required in ServiceLocator
     private void setAuthListener(AuthenticationService authenticationService) {
         authenticationService.setListener(new AuthenticationServiceListener() {
             @Override

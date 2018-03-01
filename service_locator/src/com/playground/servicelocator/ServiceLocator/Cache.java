@@ -4,6 +4,9 @@ import com.playground.servicelocator.Services.Service;
 
 import java.util.HashMap;
 
+// this class holds references to all the services
+// if a service is not present in this list it will lookup
+// and add it in the cache for future use
 public class Cache {
 
     private static Cache instance;

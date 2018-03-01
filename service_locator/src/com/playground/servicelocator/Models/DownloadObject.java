@@ -2,6 +2,7 @@ package com.playground.servicelocator.Models;
 
 import java.io.Serializable;
 
+// Dummy model objec
 public class DownloadObject implements Serializable {
 
     private String path;

@@ -1,7 +1,6 @@
 package com.playground.servicelocator.ServiceLocator;
 
-import com.playground.servicelocator.Listeners.OnServiceCompleteListener;
-import com.playground.servicelocator.Main.ApplicationContext;
+import com.playground.servicelocator.Models.ApplicationContext;
 import com.playground.servicelocator.Services.Service;
 
 public class ServiceLocator {

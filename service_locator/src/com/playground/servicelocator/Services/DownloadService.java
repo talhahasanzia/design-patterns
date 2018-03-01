@@ -4,6 +4,7 @@ import com.playground.servicelocator.Listeners.DownloadServiceListener;
 import com.playground.servicelocator.Listeners.OnServiceCompleteListener;
 import com.playground.servicelocator.Models.DownloadObject;
 
+// Dummy download service that simulates download
 public class DownloadService implements Service {
 
     private DownloadServiceListener downloadServiceListener;
@@ -22,11 +23,11 @@ public class DownloadService implements Service {
     public void execute() {
         System.out.println("Downloading..");
         try {
-            Thread.sleep(3000);
+            Thread.sleep(3000); // simulate fake download time as delay
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        DownloadObject downloadObject=new DownloadObject("/assets/denver.mp3","John Denver - Country Roads","Country Roads, Take Me Home");
+        DownloadObject downloadObject=new DownloadObject("/assets/rhinestones.mp3","Rhinestone Eyes","Gorillaz");
         downloadServiceListener.onServiceCompleted(downloadObject);
     }
 

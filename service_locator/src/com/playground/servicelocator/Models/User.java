@@ -2,7 +2,7 @@ package com.playground.servicelocator.Models;
 
 import java.io.Serializable;
 
-// Authentication response
+// Dummy Authentication response
 public class User implements Serializable {
 
     private String name;

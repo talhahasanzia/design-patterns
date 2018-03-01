@@ -7,6 +7,8 @@ import com.playground.servicelocator.Services.AuthenticationService;
 import com.playground.servicelocator.Services.DownloadService;
 import com.playground.servicelocator.Services.Service;
 
+// lookup for known services that service locator is designed to provide
+// right now we have 2 dummy services, Authentication and Download
 public class LookUp {
     private static LookUp instance;
 
