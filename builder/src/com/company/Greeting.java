@@ -1,4 +1,4 @@
-package com.example.builderpatterndemo;
+package com.company;
 
 /**
  * Created by Talha Hasan Zia on 19-Mar-18.
